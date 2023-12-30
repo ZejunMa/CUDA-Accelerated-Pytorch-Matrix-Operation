@@ -1,17 +1,28 @@
+import glob
+import os.path as osp
 from setuptools import setup
-from torch.utils.cpp_extension import CppExtension, BuildExtension
+from torch.utils.cpp_extension import CUDAExtension, BuildExtension
+
+
+ROOT_DIR = osp.dirname(osp.abspath(__file__))
+include_dirs = [osp.join(ROOT_DIR, "include")]
+sources = glob.glob('*.cpp')+glob.glob('*.cu')
+
 
 setup(
-    name='zejun_torch_cuda',
+    name='zejun_cuda',
     version='1.0',
     author='zejunma',
     author_email='zejunma9@gmail.com',
-    description='torch-cuda-acceleration-package',
-    long_description='torch-cuda-acceleration-package-developed-from-tutorial',
+    description='Pytorch CUDA/C++ Extension',
+    long_description='Pytorch CUDA/C++ Extension',
     ext_modules=[
-        CppExtension(
-            name='zejun_torch_cuda',
-            sources=['interpolation.cpp']
+        CUDAExtension(
+            name='zejun_cuda',
+            sources=sources,
+            include_dirs=include_dirs,
+            extra_compile_args={'cxx': ['-O2'],
+                                'nvcc': ['-O2']}
         )
     ],
     cmdclass={
