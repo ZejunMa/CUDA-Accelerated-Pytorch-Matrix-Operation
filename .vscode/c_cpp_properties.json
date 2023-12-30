@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/zejun/anaconda3/envs/cppcuda/include/python3.8",
+                "/home/zejun/anaconda3/envs/cppcuda/lib/python3.8/site-packages/torch",
+                "/home/zejun/anaconda3/envs/cppcuda/lib/python3.8/site-packages/torch/include/torch/csrc/api/include",
+                "/home/zejun/anaconda3/envs/cppcuda/lib/python3.8/site-packages/torch/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}

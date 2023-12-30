@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: zejun-torch-cuda
+Version: 1.0
+Summary: torch-cuda-acceleration-package
+Author: zejunma
+Author-email: zejunma9@gmail.com
+
+torch-cuda-acceleration-package-developed-from-tutorial
