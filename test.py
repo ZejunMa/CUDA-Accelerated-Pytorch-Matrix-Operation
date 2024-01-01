@@ -1,10 +1,8 @@
 import torch
-import zejun_torch_cuda
+import zejun_cuda
 
-features = torch.ones(2)
-point = torch.zeros(2)
-
-features.requires_grad = True
-out = zejun_torch_cuda.trilinear_interpolation(features, point)
+features = torch.ones(2).to('cuda')
+point = torch.zeros(2).to('cuda')
+print(features.device)
+out = zejun_cuda.trilinear_interpolation(features, point)
 print(out)
-print(out.requires_grad)
