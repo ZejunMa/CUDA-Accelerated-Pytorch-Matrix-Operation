@@ -1,5 +1,5 @@
 #include<torch/extension.h>
-#include<include/utils.h>
+#include"include/utils.h"
 
 torch::Tensor trilinear_interpolation(torch::Tensor features, torch::Tensor points){
     return trilinear_fw_cu(features,points);

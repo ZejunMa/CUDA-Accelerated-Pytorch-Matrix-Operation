@@ -5,3 +5,4 @@
 #define CHECK_INPUT(x) CHECK_CUDA(x); CHECK_CONTIGUOUS(x)
 
 torch::Tensor trilinear_interpolation(torch::Tensor features, torch::Tensor point);
+torch::Tensor trilinear_fw_cu(torch::Tensor features, torch::Tensor points);

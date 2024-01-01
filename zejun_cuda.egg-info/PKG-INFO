@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: zejun-cuda
+Version: 1.0
+Summary: Pytorch CUDA/C++ Extension
+Author: zejunma
+Author-email: zejunma9@gmail.com
+
+Pytorch CUDA/C++ Extension
