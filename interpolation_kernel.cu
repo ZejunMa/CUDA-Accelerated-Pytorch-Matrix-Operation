@@ -1,5 +1,13 @@
 #include<torch/extension.h>
 
+template<typename scalar_t>
+__global__ void trilinear_fw_kernel(
+    const torch::PackedTensorAccessor<scalar_t, 3, torch::RestrictPtrTraits, size_t> feats,
+    const torch::PackedTensorAccessor<scalar_t, 2, torch::RestrictPtrTraits, size_t> points,
+    torch::PackedTensorAccessor<scalar_t, 2, torch::RestrictPtrTraits, size_t> feat_interp
+){
+
+}
 torch::Tensor trilinear_fw_cu(torch::Tensor features, torch::Tensor points){
     const int N = features.size(0), F = features.size(2);
     torch::Tensor interpolated_features = torch::zeros({N,F},  features.options());
@@ -11,9 +19,9 @@ torch::Tensor trilinear_fw_cu(torch::Tensor features, torch::Tensor points){
     AT_DISPATCH_FLOATING_TYPES(features.type(), "trilinear_fw_cu", 
     ([&] {
         trilinear_fw_kernel<scalar_t><<<blocks, threads>>>(
-            feats.packed_accessor<scalar_t, 3, torch::RestrictPtrTraits, size_t>(),
+            features.packed_accessor<scalar_t, 3, torch::RestrictPtrTraits, size_t>(),
             points.packed_accessor<scalar_t, 2, torch::RestrictPtrTraits, size_t>(),
-            feat_interp.packed_accessor<scalar_t, 2, torch::RestrictPtrTraits, size_t>()
+            interpolated_features.packed_accessor<scalar_t, 2, torch::RestrictPtrTraits, size_t>()
         );
     }));
 
