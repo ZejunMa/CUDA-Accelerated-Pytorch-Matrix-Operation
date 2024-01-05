@@ -2,6 +2,8 @@
 #include"include/utils.h"
 
 torch::Tensor trilinear_interpolation(torch::Tensor features, torch::Tensor points){
+    CHECK_INPUT(features)
+    CHECK_INPUT(points)
     return trilinear_fw_cu(features,points);
 }
 

@@ -1,3 +1,4 @@
 # ninja log v5
-0	16421	1704146566449795812	/home/zejun/Desktop/CUDA-Accelerated-Pytorch-Matrix-Operation/build/temp.linux-x86_64-cpython-38/interpolation.o	2ec9763c13b92cc1
-0	48163	1704146598195681256	/home/zejun/Desktop/CUDA-Accelerated-Pytorch-Matrix-Operation/build/temp.linux-x86_64-cpython-38/interpolation_kernel.o	feb837fc09350817
+0	16204	1704491061735691563	/home/zejun/Desktop/CUDA-Accelerated-Pytorch-Matrix-Operation/build/temp.linux-x86_64-cpython-38/interpolation.o	2ec9763c13b92cc1
+0	50536	1704491096061671808	/home/zejun/Desktop/CUDA-Accelerated-Pytorch-Matrix-Operation/build/temp.linux-x86_64-cpython-38/interpolation_kernel.o	feb837fc09350817
+16	15723	1704491448105943924	/home/zejun/Desktop/CUDA-Accelerated-Pytorch-Matrix-Operation/build/temp.linux-x86_64-cpython-38/interpolation.o	2ec9763c13b92cc1
