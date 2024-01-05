@@ -35,10 +35,15 @@ N = 65536; F=256
 features = torch.rand(N,8,F,device='cuda')
 points = torch.rand(N,3,device='cuda')
 
+t = time.time()
 out_cuda = zejun_cuda.trilinear_interpolation(features, points)
+torch.cuda.synchronize()
+print(time.time()-t)
 print(out_cuda)
 print(out_cuda.shape)
-
+t = time.time()
 out_py = trilinear_interpolation_py(features, points)
+torch.cuda.synchronize()
+print(time.time()-t)
 print(out_py)
 print(out_py.shape)
